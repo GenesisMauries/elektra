@@ -11,7 +11,7 @@ import { UpperCasePipe } from '@angular/common';
   styleUrl: './swipe-button.component.css'
 })
 export class SwipeButtonComponent {
-  currentOption: string = 'Productos';
+  currentOption: string = 'Plazo';
 
   constructor(private router: Router, private location: Location) {}
 
