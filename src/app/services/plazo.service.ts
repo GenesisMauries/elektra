@@ -19,4 +19,9 @@ export class PlazoService {
   addPlazo(plazo: Plazo): Observable<Plazo> {
     return this.apiService.post<Plazo>(`${this.baseUrl}/crear`, plazo, );
   }
+  deletePlazo(id: number): Observable<Plazo> {
+    console.log(id);
+
+    return this.apiService.delete(`${this.baseUrl}/eliminar/${id}`)
+  }
 }
