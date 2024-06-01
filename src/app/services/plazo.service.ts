@@ -1,16 +1,22 @@
 import { Injectable } from '@angular/core';
 import { ApiService } from './api.service';
+import { Observable } from 'rxjs';
+import { Plazo } from '../interfaces/plazo.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PlazoService {
+
+  private baseUrl = 'http://localhost:8080/plazos';
+
   constructor(private apiService: ApiService) { }
 
-  getAllPlazo() {
-    this.apiService.get('http://localhost:8080/plazos/todos')
-      .subscribe(data => {
-        console.log(data);
-      });
+  getAllPlazo(): Observable<Plazo[]> {
+    return this.apiService.get<Plazo[]>(`${this.baseUrl}/todos`);
+  }
+
+  addPlazo(plazo: Plazo): Observable<Plazo> {
+    return this.apiService.post<Plazo>(`${this.baseUrl}/crear`, plazo, );
   }
 }

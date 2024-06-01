@@ -1,18 +1,31 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { AgregarPlazoComponent } from '../agregar-plazo/agregar-plazo.component';
+import { TablaPlazoComponent } from '../tabla-plazo/tabla-plazo.component';
 import { PlazoService } from '../../../services/plazo.service';
-import { ApiService } from '../../../services/api.service';
+import { Plazo } from '../../../interfaces/plazo.interface';
 
 @Component({
   selector: 'app-plazo',
   standalone: true,
-  imports: [],
+  imports: [FormsModule, CommonModule,AgregarPlazoComponent,TablaPlazoComponent],
   templateUrl: './plazo.component.html',
   styleUrl: './plazo.component.css'
 })
 export class PlazoComponent {
-  constructor(private plazoService: PlazoService, private apiService: ApiService) { } // Inject ApiService
+  plazos: Plazo[] = [];
+
+  constructor(private plazoService: PlazoService) { }
 
   ngOnInit(): void {
-    this.plazoService.getAllPlazo();
+    this.actualizarPlazos(); // Actualizar plazos cuando se inicializa el componente
   }
+
+  actualizarPlazos(): void {
+    this.plazoService.getAllPlazo().subscribe((data: Plazo[]) => {
+      this.plazos = data;
+    });
+  }
+
 }

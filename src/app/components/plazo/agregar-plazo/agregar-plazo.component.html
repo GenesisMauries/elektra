@@ -1,0 +1,14 @@
+<!-- agregar-plazo.component.html -->
+<h3>Agregar Nuevo Plazo</h3>
+<form (ngSubmit)="agregarPlazo($event)">
+  <label for="semanas">Semanas:</label>
+  <input type="number" id="semanas" [(ngModel)]="nuevoPlazo.semanas" name="semanas" required>
+
+  <label for="tasaNormal">Tasa Normal:</label>
+  <input type="number" step="0.0001" id="tasaNormal" [(ngModel)]="nuevoPlazo.tasaNormal" name="tasaNormal" required>
+
+  <label for="tasaPuntual">Tasa Puntual:</label>
+  <input type="number" step="0.0001" id="tasaPuntual" [(ngModel)]="nuevoPlazo.tasaPuntual" name="tasaPuntual" required>
+
+  <button type="submit">Agregar</button>
+</form>
