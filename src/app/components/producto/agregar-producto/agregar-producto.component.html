@@ -1,0 +1,14 @@
+
+<form (ngSubmit)="agregarProducto($event)">
+  <label for="sku">SKU:</label>
+  <input type="text" id="sku" [(ngModel)]="nuevoProducto.sku" name="sku" required>
+
+  <label for="nombre">Nombre:</label>
+  <input type="text" id="nombre" [(ngModel)]="nuevoProducto.nombre" name="nombre" required>
+
+  <label for="precio">Precio:</label>
+  <input type="number" id="precio" [(ngModel)]="nuevoProducto.precio" name="precio" required>
+
+  <button type="submit">Agregar</button>
+</form>
+
