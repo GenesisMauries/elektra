@@ -11,7 +11,7 @@ import { UpperCasePipe } from '@angular/common';
   styleUrl: './swipe-button.component.css'
 })
 export class SwipeButtonComponent {
-  currentOption: string = 'Plazo';
+  currentOption: string = 'Ir a productos';
 
   constructor(private router: Router, private location: Location) {}
 
@@ -20,6 +20,6 @@ export class SwipeButtonComponent {
     const navigateTo = currentPath === '/producto' ? '/plazo' : '/producto';
 
     this.router.navigate([navigateTo]);
-    this.currentOption = navigateTo === '/producto' ? 'Productos' : 'Plazo'; // Update text based on navigation
+    this.currentOption = navigateTo === '/producto' ? ' ir a plazo': 'ir a productos' ; // Update text based on navigation
   }
 }
