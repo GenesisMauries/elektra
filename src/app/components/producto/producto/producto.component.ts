@@ -11,7 +11,6 @@ import { ProductoService } from '../../../services/producto.service';
   standalone: true,
   imports: [AgregarProductoComponent, TablaProductoComponent, CommonModule, FormsModule],
   templateUrl: './producto.component.html',
-  styleUrl: './producto.component.css'
 })
 export class ProductoComponent {
   productos: Producto[] = [];
