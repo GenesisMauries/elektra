@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [RouterOutlet, SwipeButtonComponent, CommonModule]
+    imports: [RouterOutlet, SwipeButtonComponent, CommonModule,]
 })
 export class AppComponent {
   title = 'elektra';

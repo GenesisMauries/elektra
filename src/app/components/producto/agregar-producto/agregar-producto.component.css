@@ -1,0 +1,32 @@
+
+*{
+  text-align: center;}
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  label {
+    margin-bottom: 0.5rem;
+  }
+
+  input {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #000;
+  }
+
+  button[type="submit"] {
+    padding: 0.5rem 1rem;
+    background-color: #667302;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    width: 140px;
+    border-radius: 75px;
+  }
+
+  button[type="submit"]:hover {
+    background-color: #000;
+  }

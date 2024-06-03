@@ -17,9 +17,7 @@ export class AgregarPlazoComponent {
   @Output() plazoAgregado = new EventEmitter<void>();
 
   constructor(private plazoService: PlazoService, private toastr: ToastrService) { }
-  showSuccess() {
-    this.toastr.success('¡Plazo agregado exitosamente!', 'Ok');
-  }
+
   agregarPlazo(event: Event): void {
     event.preventDefault();
     if (this.nuevoPlazo.semanas === 0 || this.nuevoPlazo.tasaNormal === 0 || this.nuevoPlazo.tasaPuntual === 0) {
@@ -30,7 +28,7 @@ export class AgregarPlazoComponent {
       console.log('Plazo agregado exitosamente');
       this.nuevoPlazo = { semanas: 0, tasaNormal: 0, tasaPuntual: 0 };
       this.plazoAgregado.emit();
-      this.showSuccess()
+      this.toastr.success('¡Plazo agregado exitosamente!', 'Ok');
     });
   }
 }

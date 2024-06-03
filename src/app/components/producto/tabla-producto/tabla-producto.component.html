@@ -1,0 +1,31 @@
+<h2>Administración de Productos</h2>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>SKU</th>
+      <th>Nombre</th>
+      <th>Precio</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let producto of productos">
+      <td>{{ producto.id }}</td>
+      <td>{{ producto.sku }}</td>
+      <td>{{ producto.nombre }}</td>
+      <td>{{ producto.precio }}</td>
+      <td>
+        <button (click)="editarProducto(producto)">Editar</button>
+        <button (click)="eliminarProducto(producto)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<app-editar-producto
+  *ngIf="productoParaEditar"
+  [producto]="productoParaEditar"
+  (productoEditado)="onProductoEditado()"
+></app-editar-producto>
+
