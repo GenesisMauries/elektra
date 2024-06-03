@@ -33,6 +33,6 @@ export class TablaProductoComponent {
 
   onProductoEditado(): void {
     this.productoParaEditar = null;
-    this.productoEliminado.emit(); // Actualiza la lista de productos
+    this.productoEliminado.emit();
   }
 }
