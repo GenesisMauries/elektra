@@ -25,4 +25,8 @@ export class ProductoService {
 
     return this.apiService.delete(`${this.baseUrl}/eliminar/${id}`)
   }
+
+  updateProducto(producto: Producto): Observable<Producto> {
+    return this.apiService.put<Producto>(`${this.baseUrl}/actualizar/${producto.id}`, producto);
+  }
 }

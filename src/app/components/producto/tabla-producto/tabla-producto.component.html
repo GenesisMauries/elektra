@@ -23,3 +23,9 @@
   </tbody>
 </table>
 
+<app-editar-producto
+  *ngIf="productoParaEditar"
+  [producto]="productoParaEditar"
+  (productoEditado)="onProductoEditado()"
+></app-editar-producto>
+
