@@ -25,6 +25,9 @@ export class PlazoComponent {
   actualizarPlazos(): void {
     this.plazoService.getAllPlazo().subscribe((data: Plazo[]) => {
       this.plazos = data;
+    },
+    (error: string) => {
+      console.error('There was an error!', error);
     });
   }
 
