@@ -11,7 +11,6 @@ import { Plazo } from '../../../interfaces/plazo.interface';
   standalone: true,
   imports: [FormsModule, CommonModule,AgregarPlazoComponent,TablaPlazoComponent],
   templateUrl: './plazo.component.html',
-  styleUrl: './plazo.component.css'
 })
 export class PlazoComponent {
   plazos: Plazo[] = [];
@@ -19,7 +18,7 @@ export class PlazoComponent {
   constructor(private plazoService: PlazoService) { }
 
   ngOnInit(): void {
-    this.actualizarPlazos(); // Actualizar plazos cuando se inicializa el componente
+    this.actualizarPlazos();
   }
 
   actualizarPlazos(): void {
